@@ -1,0 +1,8 @@
+<td class="todo-limit"><%= "あと#{limit}日" %></td>
+<td><%= todo.content %></td>
+<td class="todo-ope">
+  <%= link_to("/todo/#{todo.id}/check", {method: "post"}) do %>
+      <i class="fas fa-check check-btn"></i>
+  <% end %>
+  <i class="fas fa-pencil-alt"></i>
+</td>

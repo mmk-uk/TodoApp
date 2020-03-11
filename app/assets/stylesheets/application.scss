@@ -1,0 +1,114 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+ @import "bootstrap";
+ @import 'font-awesome-sprockets';
+ @import 'font-awesome';
+
+ body {
+     padding-top: 80px;
+ }
+
+.title{
+  width:500px;
+  padding:10px 0;
+  margin:0 auto;
+}
+
+.todolist{
+  width:500px;
+  margin:0 auto;
+}
+
+.todo-plus{
+  width:500px;
+  padding:10px 0;
+  margin:0 auto;
+}
+
+.table-column{
+  border-bottom: 2px solid black;
+}
+
+.todo{
+  border-bottom: 1px solid rgba(181,181,181,0.5);
+}
+
+.todo-limit{
+  width:120px;
+}
+
+.todo-ope{
+  width:80px;
+}
+
+.todo-ope i{
+  padding:5px;
+}
+
+.todo-ope i:hover{
+  color:red;
+}
+
+.check-btn{
+  color:black;
+}
+
+.todo-plus{
+  width:50px;
+  height:50px;
+  border-radius: 25px;
+  background-color: black;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+button i{
+  color:white;
+}
+
+.form-field{
+  margin:10px 0;
+}
+
+.form-submit{
+  margin:20px 0;
+}
+
+.back-btn{
+  float:right;
+}
+
+.newtodo{
+  width:500px;
+  margin:50px auto;
+}
+
+.red-limit{
+  background-color: rgba(255,0,0,0.5);
+}
+
+.yellow-limit{
+  background-color: rgba(255,251,0,0.5);
+}
+
+.blue-limit{
+  background-color: rgba(0,255,255,0.5);
+}
+
+.done-limit{
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0.5;
+}

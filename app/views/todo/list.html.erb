@@ -1,0 +1,45 @@
+
+
+
+<div class="cotainer title">
+  <h1>Todoリスト</h1>
+</div>
+
+<table class="table table-borderless todolist" >
+  <thead class="table-column">
+    <tr><th>期限まで</th><th>やること</th><th></th></tr>
+  </thead>
+  <tbody>
+
+    <% @todolist.each do |todo| %>
+      <% limit = (todo.deadline - Date.today).to_i %>
+      <% if todo.done %>
+        <tr class="todo done-limit">
+          <%= render 'todo/todo_record', limit:limit, todo:todo%>
+        </tr>
+      <% else %>
+        <% if limit<=1 %>
+          <tr class="todo red-limit">
+            <%= render 'todo/todo_record' , limit:limit, todo:todo%>
+          </tr>
+        <% elsif limit<=3 %>
+          <tr class="todo yellow-limit">
+            <%= render 'todo/todo_record' , limit:limit, todo:todo%>
+          </tr>
+        <% else %>
+          <tr class="todo blue-limit">
+            <%= render 'todo/todo_record', limit:limit , todo:todo%>
+          </tr>
+        <% end %>
+      <% end %>
+
+    <% end %>
+
+  </tbody>
+</table>
+
+<%= link_to("todo/new") do %>
+  <button type="button" class="btn todo-plus">
+    <i class="fas fa-plus todo-plus-btn"></i>
+  </button>
+<% end %>
