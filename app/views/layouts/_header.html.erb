@@ -1,10 +1,18 @@
 <header>
   <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
-       <%= link_to "TodoApp", "#", id: "logo", class: "navbar-brand" %>
+      <% if @current_user %>
+        <%= link_to "TodoApp", "/todo/#{@current_user.id}/list", id: "logo", class: "navbar-brand" %>
+      <% else %>
+        <%= link_to "TodoApp", "/", id: "logo", class: "navbar-brand" %>
+      <% end %>
        <div class="collapse navbar-collapse justify-content-end">
          <ul class="navbar-nav">
            <li class="nav-item">
-             <%= link_to "一覧", "#", class: "nav-link" %>
+             <% if @current_user %>
+                <%= link_to "ログアウト", "/logout", class: "nav-link" , method: :delete%>
+             <% else %>
+                <%= link_to "ログイン", "/login", class: "nav-link" %>
+             <% end %>
            </li>
          </ul>
        </div>

@@ -1,8 +1,8 @@
 
 
 
-<div class="cotainer title">
-  <h1>Todoリスト</h1>
+<div class="container title">
+  <h1><%= @current_user.name %> のTodoリスト</h1>
 </div>
 
 <table class="table table-borderless todolist" >
@@ -13,6 +13,10 @@
 
     <% @todolist.each do |todo| %>
       <% limit = (todo.deadline - Date.today).to_i %>
+      <%  if limit <= -1
+          next
+          end  %>
+
       <% if todo.done %>
         <tr class="todo done-limit">
           <%= render 'todo/todo_record', limit:limit, todo:todo%>
@@ -38,7 +42,7 @@
   </tbody>
 </table>
 
-<%= link_to("todo/new") do %>
+<%= link_to("/todo/new") do %>
   <button type="button" class="btn todo-plus">
     <i class="fas fa-plus todo-plus-btn"></i>
   </button>

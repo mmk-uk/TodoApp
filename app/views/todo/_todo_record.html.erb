@@ -1,8 +1,18 @@
-<td class="todo-limit"><%= "あと#{limit}日" %></td>
-<td><%= todo.content %></td>
+<td class="todo-limit"><%=
+  if limit == 0
+    "今日"
+  elsif limit == 1
+    "明日"
+  else
+    "あと#{limit}日"
+  end
+  %></td>
+<td class="todo-content"><%= todo.content %></td>
 <td class="todo-ope">
-  <%= link_to("/todo/#{todo.id}/check", {method: "post"}) do %>
+  <%= link_to("/todo/#{todo.id}/check", {method: "post"},class:"editlink") do %>
       <i class="fas fa-check check-btn"></i>
   <% end %>
-  <i class="fas fa-pencil-alt"></i>
+  <%= link_to("/todo/#{todo.id}/edit")do %>
+    <i class="fas fa-pencil-alt pencil-btn"></i>
+  <% end %>
 </td>

@@ -49,6 +49,10 @@
   width:120px;
 }
 
+.todo-content{
+  width:300px;
+}
+
 .todo-ope{
   width:80px;
 }
@@ -59,11 +63,25 @@
 
 .todo-ope i:hover{
   color:red;
+  opacity: 1;
 }
 
 .check-btn{
   color:black;
 }
+
+.pencil-btn{
+  color:black;
+}
+
+.editlink{
+  text-decoration: none;
+}
+
+table td {
+  word-break : break-all;
+}
+
 
 .todo-plus{
   width:50px;
@@ -93,7 +111,7 @@ button i{
 
 .newtodo{
   width:500px;
-  margin:50px auto;
+  margin:10px auto;
 }
 
 .red-limit{
@@ -111,4 +129,16 @@ button i{
 .done-limit{
   background-color: rgba(0,0,0,0.5);
   opacity: 0.5;
+}
+
+.delete-btn{
+  float:right;
+}
+
+.form-error {
+  color: #ff4d75;
+}
+
+.username{
+  text-align: center;
 }

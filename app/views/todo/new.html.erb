@@ -1,15 +1,15 @@
-<div class="cotainer title">
+<div class="container title">
   <h1>新規Todo</h1>
-  <%= link_to("/") do %>
-  <button type="button" class="btn btn-primary back-btn">
-    戻る
-  </button>
-  <% end %>
 </div>
 
 
 
 <div class="newtodo">
+  <% @todo.errors.full_messages.each do |message| %>
+    <div class="form-error">
+      <%= message %>
+    </div>
+  <% end %>
   <%= form_for @todo, url:"/todo" do |f| %>
     <div class="form-field">
       <%= f.label :やること %>
@@ -24,5 +24,10 @@
     <div class="form-submit">
       <%= f.submit "Todoを作る", class: "btn btn-primary"%>
     </div>
+  <% end %>
+  <%= link_to("/todo/list") do %>
+  <button type="button" class="btn btn-primary back-btn">
+    戻る
+  </button>
   <% end %>
 </div>
